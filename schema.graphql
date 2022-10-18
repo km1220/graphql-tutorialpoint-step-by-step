@@ -1,0 +1,13 @@
+type Query {
+  greeting: String
+  students: [Students]
+  studentById(id: ID!): Students
+}
+
+type Students {
+  id: ID!
+  firstName: String
+  lastName: String
+  password: String
+  collegeId: String
+}
