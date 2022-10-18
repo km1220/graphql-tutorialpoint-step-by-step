@@ -11,7 +11,6 @@ const resolvers = require('./resolvers')
 const { makeExecutableSchema } = require('graphql-tools')
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
-console.log(resolvers);
 
 app.use(cors(), bodyParser.json());
 const { graphiqlExpress, graphqlExpress } = require('apollo-server-express')
