@@ -9,6 +9,20 @@ const Query = {
 		// console.log('========== studentById ========== : ', root, args, context, info)
 
 		return db.students.get(args.id);
+	},
+
+	// 
+	// 
+	// 
+	// // 		query variable example
+	sayHello: (root, args, context, info) => {
+		return `Hi "${args.name}" !     Nice to meet you!`
+	},
+
+
+
+	setFavoriteColor: (root, args, context, info) => {
+		return `Your favorite color is ${args.color}`
 	}
 }
 

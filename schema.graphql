@@ -1,10 +1,3 @@
-type Query {
-  greeting: String
-  students: [Student]
-
-  # ---------------- query with custom field ----------------
-  studentById(id: ID!): Student
-}
 
 type Student {
   id: ID!
@@ -12,7 +5,7 @@ type Student {
   lastName: String
   password: String
   collegeId: String
-  
+
   # ---------------- get new field from other existing fields ----------------
   fullName: String
 
@@ -25,4 +18,28 @@ type College {
   name: String
   location: String
   rating: Float
+}
+
+
+
+
+
+enum ColorType {
+  RED,
+  BLUE,
+  GREEN
+}
+
+type Query {
+  greeting: String
+  students: [Student]
+
+  # ---------------- query with custom field ----------------
+  studentById(id: ID!): Student
+
+  # ---------------- query variable ----------------
+  sayHello(name: String!): String
+
+  # ---------------- use enum type ----------------
+  setFavoriteColor(color: ColorType): String
 }
