@@ -10,4 +10,6 @@ type Students {
   lastName: String
   password: String
   collegeId: String
+# ----------------------------
+  fullName: String
 }
