@@ -40,5 +40,9 @@ type Query {
 }
 
 type Mutation {
+  # --------------- add new student ---------------
   createStudent(collegeId: ID, firstName: String, lastName: String): String
+
+  # --------------- add new student ---------------
+  addStudent_return_obj(collegeId: ID, firstName: String, lastName: String): Student
 }
