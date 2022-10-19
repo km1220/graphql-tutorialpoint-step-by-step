@@ -44,5 +44,32 @@ type Mutation {
   createStudent(collegeId: ID, firstName: String, lastName: String): String
 
   # --------------- add new student ---------------
-  addStudent_return_obj(collegeId: ID, firstName: String, lastName: String): Student
+  addStudent_return_obj(
+    collegeId: ID
+    firstName: String
+    lastName: String
+  ): Student
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # --------------- validate query ---------------
+  signUp(input: SignUpInput): String
+}
+
+input SignUpInput {
+  email: String!
+  password: String!
+  firstName: String!
 }
