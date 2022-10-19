@@ -38,4 +38,32 @@ const Student = {
 	}
 }
 
-module.exports = { Query, Student };
+
+
+// ===================================================
+
+const Mutation = {
+	createStudent: (root, args, context, info) => {
+		return db.students.create({
+			collegeId: args.collegeId,
+			firstName: args.firstName,
+			lastName: args.lastName
+		})
+	},
+
+
+
+	addStudent_return_obj: (root, args, context, info) => {
+		const new_id = db.students.create({
+			collegeId: args.collegeId,
+			firstName: args.firstName,
+			lastName: args.lastName
+		})
+		return db.students.get(new_id)
+	}
+}
+
+module.exports = {
+	Query, Student,
+	Mutation
+};

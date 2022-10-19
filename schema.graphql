@@ -1,4 +1,3 @@
-
 type Student {
   id: ID!
   firstName: String
@@ -20,13 +19,9 @@ type College {
   rating: Float
 }
 
-
-
-
-
 enum ColorType {
-  RED,
-  BLUE,
+  RED
+  BLUE
   GREEN
 }
 
@@ -42,4 +37,12 @@ type Query {
 
   # ---------------- use enum type ----------------
   setFavoriteColor(color: ColorType): String
+}
+
+type Mutation {
+  # --------------- add new student ---------------
+  createStudent(collegeId: ID, firstName: String, lastName: String): String
+
+  # --------------- add new student ---------------
+  addStudent_return_obj(collegeId: ID, firstName: String, lastName: String): Student
 }
